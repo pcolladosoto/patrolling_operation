@@ -87,7 +87,6 @@ def find_N_open_portial_port(b_rate):
         except(OSError, serial.SerialException):
             pass
 
-    print(ERROR_MESSAGES["PORT_NOT_FOUND"])
     return exit()
 
 def check_if_arduino():
@@ -219,15 +218,15 @@ def SensorDelantero():
             var1 = int(matches[0]) #Var viene expresada en cm
             var2 = int(matches[1]) #izq
             var3 = int(matches[2]) #der
-        if var1 == 0:
-            retval = 0
-            var1 = 3000
-        if var2 == 0:
-            retval = 0
-            var2 = 3000
-        if var3 == 0:
-            retval = 0
-            var3 = 3000
+    if var1 == 0:
+    	retval = 0
+    	var1 = 3000
+    if var2 == 0:
+    	retval = 0
+    	var2 = 3000
+    if var3 == 0:
+    	retval = 0
+    	var3 = 3000
 
     if (var1 * CM < TH_DIST): # cm * [casillas/cm]
         retval = 1

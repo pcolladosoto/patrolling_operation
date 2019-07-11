@@ -18,11 +18,10 @@ def main():
     thread_b.start()
 
     while True:
-        print "Hey!"
-        #while not q.empty():
-        #    if q.get() == "Stop!":
-        #        print "Hi!"
-        #        s_q.put("Stop!")
+        while not q.empty():
+            if q.get() == "Stop!":
+                print "Got STOP!"
+                s_q.put("Stop!")
 
 if __name__ == "__main__":
     main()
